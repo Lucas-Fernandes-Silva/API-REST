@@ -37,7 +37,7 @@ class UserController {
         const schema = Yup.object().shape({
             name: Yup.string(),
             email: Yup.string().email(),
-            OldPassword: Yup.string().min(6),
+            oldPassword: Yup.string().min(6),
             password: Yup.string().min(6)
             .when('oldPassword', (oldPassword, field) =>
               oldPassword ? field.required() : field            
@@ -49,10 +49,9 @@ class UserController {
         });
 
 
-        if(!( await schema.isValid(req.body))){
+        if(!(await schema.isValid(req.body))){
             return res.status(400).json({error: 'Validations Fails'})
         }
-
 
         const { email, oldPassword } = req.body;
 

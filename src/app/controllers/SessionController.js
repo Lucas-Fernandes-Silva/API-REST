@@ -13,7 +13,7 @@ class SessionController{
 
 
         if(!( await schema.isValid(req.body))){
-            return res.status(400).json({error: 'Validations'})
+            return res.status(400).json({error: 'Validations Fails'})
         }
 
         const {email, password} = req.body;
@@ -25,7 +25,7 @@ class SessionController{
         }
 
         if(!(await user.checkPassword(password))){
-             return res.status(401).json( {error: 'Password does not match'})
+             return res.status(401).json( {error: 'Password   not match'})
         }
 
         const {id, name} = user; 
