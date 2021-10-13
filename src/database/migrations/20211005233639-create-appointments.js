@@ -12,7 +12,7 @@ module.exports = {
          type: Sequelize.DATE,
        },
        
-       user_Id : {
+       user_id : {
          type: Sequelize.INTEGER,
          references: { model: 'users', key: 'id'},
          onUpdate: 'CASCADE',
@@ -20,7 +20,7 @@ module.exports = {
          allowNull: true,
        },
 
-       provider_Id: {
+       provider_id: {
         type: Sequelize.INTEGER,
         references: { model: 'users', key: 'id'},
         onUpdate: 'CASCADE',
