@@ -28,7 +28,7 @@ class Database{
     }
 
     mongo(){
-        this.mongoConnection = mongoose.connect('mongodb://localhost:27017/barber',
+        this.mongoConnection = mongoose.connect(process.env.MONGO_URL,
         { useNewUrlParser : true, useUnifiedTopology : true },
         );
     }

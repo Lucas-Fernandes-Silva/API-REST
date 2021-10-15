@@ -1,10 +1,10 @@
 export default {
-  host: "smtp.mailtrap.io",
-  port: 2525,
+  host: process.env.MAIL_HOST,
+  port: process.env.MAIL_PORT,
   secure: false,
   auth: {
-    user: "92011a660302b8",
-    pass: "85c9a59c014a80"
+    user: process.env.MAIL_USER,
+    pass: process.env.MAIL_PASS
   },
 
     default: {

@@ -110,7 +110,7 @@ class AppointmentController {
            {
              model: User,
              as: 'provider',
-             attributes: ['name', 'email'],
+             attributes: ['name', 'email', 'past', 'cancelable'],
            }
         ]
       });
